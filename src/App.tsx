@@ -87,6 +87,17 @@ export default function App() {
     setGroups([]);
   };
 
+  const loadMockData = () => {
+    const mockNames = [
+      '陳小明', '林美華', '張大衛', '李雅婷', '王志強',
+      '黃淑芬', '劉家豪', '趙婉君', '周杰倫', '蔡依林',
+      '郭台銘', '張忠謀', '林志玲', '金城武', '梁朝偉',
+      '周潤發', '劉德華', '張學友', '黎明', '郭富城'
+    ];
+    setNames(mockNames);
+    setInputText(mockNames.join('\n'));
+  };
+
   const startDraw = () => {
     if (currentPool.length === 0) return;
     setIsDrawing(true);
@@ -189,8 +200,23 @@ export default function App() {
                   />
                 </div>
 
-                <div className="space-y-6">
-                  <div className="bg-white border border-[#E5E5E5] rounded-2xl p-6 space-y-4">
+                  <div className="space-y-6">
+                    <div className="bg-white border border-[#E5E5E5] rounded-2xl p-6 space-y-4">
+                      <h3 className="font-semibold flex items-center gap-2">
+                        <Users className="w-4 h-4" />
+                        快速體驗
+                      </h3>
+                      <p className="text-sm text-[#9E9E9E]">點擊下方按鈕載入模擬名單，快速測試抽籤與分組功能。</p>
+                      <button
+                        onClick={loadMockData}
+                        className="w-full py-2.5 px-4 bg-[#F5F5F5] text-[#1A1A1A] rounded-xl flex items-center justify-center gap-2 hover:bg-[#E5E5E5] transition-colors text-sm font-medium border border-[#E5E5E5]"
+                      >
+                        <Play className="w-3.5 h-3.5" />
+                        載入模擬名單
+                      </button>
+                    </div>
+
+                    <div className="bg-white border border-[#E5E5E5] rounded-2xl p-6 space-y-4">
                     <h3 className="font-semibold flex items-center gap-2">
                       <Upload className="w-4 h-4" />
                       快速匯入
