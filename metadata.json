@@ -1,0 +1,5 @@
+{
+  "name": "HR 抽籤分組工具 (HR Draw & Group Tool)",
+  "description": "專業 HR 工具，支援 CSV 上傳名單，提供動畫抽籤與自動分組功能。",
+  "requestFramePermissions": []
+}
